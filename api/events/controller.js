@@ -17,6 +17,12 @@ const finalizarEvento = async (req, res) =>{
     res.status(200).json({ eventos })
 }
 
+const eliminarEvento = async (req, res) =>{
+    const {id}=req.body;
+    const eventos = await Event.deleteOne({_id:id});
+    res.status(200).json({ eventos })
+}
+
 const createEvent = async (req, res) =>{
     const {local, visitante, fecha, hora, estado, resultado, apuestas} = req.body;
     
@@ -31,5 +37,5 @@ const createEvent = async (req, res) =>{
 }
 
 module.exports = {
-    list, createEvent, listByEstado, finalizarEvento
+    list, createEvent, listByEstado, finalizarEvento, eliminarEvento
 }
