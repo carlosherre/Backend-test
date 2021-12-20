@@ -6,7 +6,7 @@ const apuestaSchema = {
     id_evento:{type:String,required:true},
     monto:{type:Number,required:true},
     seleccion:{type:String,required:true},
-    estado:{type:String,required:true,default:"activo"},
+    estado:{type:String,default:"activo"},
 }
 const options ={
     timestamps:true,
