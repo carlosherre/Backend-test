@@ -35,7 +35,7 @@ const editarApuestas = async (req, res) =>{
     const {id_evento, resultado}=req.body;
     const apuesta = await Apuesta.updateMany({id_evento:id_evento},{estado:"perdida"});
     const apuesta2 = await Apuesta.updateMany({id_evento:id_evento, seleccion:resultado},{estado:"ganada"});
-    res.status(200).json({ apuesta });
+    res.status(200).json({ apuesta2 });
 }
 
 module.exports = {
