@@ -1,9 +1,8 @@
 const express = require("express");
-const {listByApostador, listByEvento, createApuesta, deleteApuesta} = require("./controller");
-const {validateCreateEvent} = require("../middlewares/validator");
+const {listByApostador, listByEvento, createApuesta, deleteApuesta, editarApuestas} = require("./controller");
 
 const router = express.Router();
 
-router.route("/").get(listByApostador).post(createApuesta).delete(deleteApuesta);
+router.route("/").get(listByApostador).post(createApuesta).delete(deleteApuesta).patch(editarApuestas);
 router.route("/xevento").get(listByEvento);
 module.exports = router;
